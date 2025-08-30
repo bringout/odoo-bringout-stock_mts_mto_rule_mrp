@@ -2,6 +2,6 @@
 
 This addon depends on:
 
-- [stock](../../odoo-bringout-oca-ocb-stock)
-- [mrp](../../odoo-bringout-oca-ocb-mrp)
-- [stock_mts_mto_rule](../../odoo-bringout-oca-stock-logistics-warehouse-stock_mts_mto_rule)
+- [stock](../../../../../oca-ocb-warehouse/odoo-bringout-oca-ocb-stock)
+- [mrp](../../../../../oca-ocb-mrp/odoo-bringout-oca-ocb-mrp)
+- [stock_mts_mto_rule](../../../../../oca-workflow-process/odoo-bringout-oca-stock-logistics-warehouse-stock_mts_mto_rule)
