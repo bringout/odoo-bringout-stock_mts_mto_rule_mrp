@@ -2,7 +2,7 @@
 {
     "name": "Stock MTS+MTO Rule MRP",
     "summary": "Configure MTS+MTO route for manufacturing.",
-    "version": "16.0.2.0.0",
+    "version": "16.0.1.1.0",
     "category": "Warehouse",
     "website": "https://github.com/OCA/stock-logistics-warehouse",
     "author": "Akretion, Odoo Community Association (OCA)",
