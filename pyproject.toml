@@ -1,6 +1,6 @@
 [project]
 name = "odoo-bringout-stock_mts_mto_rule_mrp"
-version = "16.0.0"
+version = "16.0.2.1.0"
 description = "Stock MTS+MTO Rule MRP - Configure MTS+MTO route for manufacturing."
 authors = [
     { name = "Ernad Husremovic", email = "hernad@bring.out.ba" }
