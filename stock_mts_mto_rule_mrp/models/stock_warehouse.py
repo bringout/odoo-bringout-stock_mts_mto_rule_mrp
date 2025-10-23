@@ -22,8 +22,15 @@ class StockWarehouse(models.Model):
         return res
     
     def _get_global_route_rules_values(self):
-        
+
         res = super(StockWarehouse, self)._get_global_route_rules_values()
+
+        # Check if pbm_route_id has rules before accessing
+        if not self.pbm_route_id or not self.pbm_route_id.rule_ids:
+            return res
+
+        pbm_rule = self.pbm_route_id.rule_ids[0]
+
         res.update(
             {
                 "mts_mto_rule_mrp_id": {
@@ -42,13 +49,13 @@ class StockWarehouse(models.Model):
                     "update_values": {
                         "active": self.mto_mts_management,
                         "name": self._format_rulename(
-                            self.pbm_route_id.rule_ids[0].location_src_id, 
-                            self.pbm_route_id.rule_ids[0].location_dest_id, 
+                            pbm_rule.location_src_id,
+                            pbm_rule.location_dest_id,
                             "MTS+MTO MRP"
                         ),
-                        "location_dest_id": self.pbm_route_id.rule_ids[0].location_dest_id.id,
-                        "location_src_id": self.pbm_route_id.rule_ids[0].location_src_id.id,
-                        "picking_type_id": self.pbm_route_id.rule_ids[0].picking_type_id.id,
+                        "location_dest_id": pbm_rule.location_dest_id.id,
+                        "location_src_id": pbm_rule.location_src_id.id,
+                        "picking_type_id": pbm_rule.picking_type_id.id,
                     },
                 },
             }
@@ -72,16 +79,17 @@ class StockWarehouse(models.Model):
                 ],
                 limit=1,
             )
-            if not rule_mrp:
+            if not rule_mrp and self.pbm_route_id and self.pbm_route_id.rule_ids:
+                pbm_rule = self.pbm_route_id.rule_ids[0]
                 self.mts_mto_rule_mrp_id.write(
                         {
                             "action": "split_procurement",
-                            "mts_rule_id": self.pbm_route_id.rule_ids[0].id,
+                            "mts_rule_id": pbm_rule.id,
                             "mto_rule_id": self.pbm_mto_pull_id.id,
-                            "picking_type_id": self.pbm_route_id.rule_ids[0].picking_type_id,
+                            "picking_type_id": pbm_rule.picking_type_id,
                             "location_src_id": self.pbm_mto_pull_id.location_src_id.id,
                             "location_dest_id": self.pbm_mto_pull_id.location_dest_id.id,
                         }
                     )
 
-            return res
+        return res
