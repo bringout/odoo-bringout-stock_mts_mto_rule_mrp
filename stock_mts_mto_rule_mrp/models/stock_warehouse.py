@@ -6,6 +6,13 @@ class StockWarehouse(models.Model):
     _inherit = "stock.warehouse"
 
     mts_mto_rule_mrp_id = fields.Many2one("stock.rule", "MTO+MTS MRP rule", check_company=True)
+    mts_use_actual_available = fields.Boolean(
+        "MTS use actual available instead virtual",
+        default=True,
+        help="When enabled, MTS+MTO rules will use actual available quantity "
+             "(on_hand - reserved) instead of virtual/forecasted quantity "
+             "(on_hand + incoming - outgoing) to decide MTS vs MTO split."
+    )
 
     def _update_name_and_code(self, new_name=False, new_code=False):
         res = super(StockWarehouse, self)._update_name_and_code(new_name, new_code)

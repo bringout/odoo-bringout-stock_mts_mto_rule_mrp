@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_warehouse_mts_mto_mrp" model="ir.ui.view">
+        <field name="name">stock.warehouse.mts.mto.mrp</field>
+        <field name="model">stock.warehouse</field>
+        <field name="inherit_id" ref="stock_mts_mto_rule.view_warehouse_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mto_mts_management']" position="after">
+                <field name="mts_use_actual_available"
+                       attrs="{'invisible': [('mto_mts_management', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
