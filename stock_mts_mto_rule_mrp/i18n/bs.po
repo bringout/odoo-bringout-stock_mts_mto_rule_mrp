@@ -1,0 +1,24 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: stock_mts_mto_rule_mrp
+#: model:ir.model.fields,field_description:stock_mts_mto_rule_mrp.field_stock_warehouse__mts_mto_rule_mrp_id
+msgid "MTO+MTS MRP rule"
+msgstr "MTO+MTS MRP rule"
+
+#. module: stock_mts_mto_rule_mrp
+#: code:addons/stock_mts_mto_rule_mrp/models/stock_warehouse.py
+#, python-format
+msgid "Make To Order + Make To Stock"
+msgstr "Make To Order + Make To Stock"
+
+#. module: stock_mts_mto_rule_mrp
+#: model:ir.model,name:stock_mts_mto_rule_mrp.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Skladište"
