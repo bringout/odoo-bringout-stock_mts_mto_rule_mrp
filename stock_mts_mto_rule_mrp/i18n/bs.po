@@ -10,13 +10,13 @@ msgstr ""
 #. module: stock_mts_mto_rule_mrp
 #: model:ir.model.fields,field_description:stock_mts_mto_rule_mrp.field_stock_warehouse__mts_mto_rule_mrp_id
 msgid "MTO+MTS MRP rule"
-msgstr "MTO+MTS MRP rule"
+msgstr ""
 
 #. module: stock_mts_mto_rule_mrp
-#: code:addons/stock_mts_mto_rule_mrp/models/stock_warehouse.py
+#: code:addons/stock_mts_mto_rule_mrp/models/stock_warehouse.py:0
 #, python-format
 msgid "Make To Order + Make To Stock"
-msgstr "Make To Order + Make To Stock"
+msgstr ""
 
 #. module: stock_mts_mto_rule_mrp
 #: model:ir.model,name:stock_mts_mto_rule_mrp.model_stock_warehouse
