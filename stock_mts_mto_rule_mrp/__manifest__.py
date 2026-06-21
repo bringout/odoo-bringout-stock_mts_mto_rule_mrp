@@ -2,7 +2,7 @@
 {
     "name": "Stock MTS+MTO Rule MRP",
     "summary": "Configure MTS+MTO route for manufacturing.",
-    "version": "16.0.2.3.0",
+    "version": "19.0.2.3.0",
     "category": "Warehouse",
     "website": "https://www.bring.out.ba",
     "author": "bring.out doo Sarajevo",
