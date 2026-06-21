@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='mto_mts_management']" position="after">
                 <field name="mts_use_actual_available"
-                       attrs="{'invisible': [('mto_mts_management', '=', False)]}"/>
+                       invisible="mto_mts_management == False"/>
             </xpath>
         </field>
     </record>
